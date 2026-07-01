@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="منتجات مسام للطباعة والتغليف: أكواب ورقية مفردة ومزدوجة الجدار، صناديق وكراتين بيتزا وبرجر وشحن، ملصقات رول وشيت ومقصوصة، أكياس ورقية، تغليف طعام وتغليف مخصّص بكل المقاسات في السعودية.">
+  <meta name="keywords" content="أكواب ورقية, أكواب مزدوجة الجدار, أكواب 8 أونصة, صناديق بيتزا, صناديق برجر, صناديق شحن, ملصقات رول, ستيكر مقصوص, أكياس كرافت, تغليف طعام كلامشيل, تغليف مخصص, مسام">
+  <meta property="og:title" content="منتجات مسام للطباعة والتغليف">
+  <meta property="og:description" content="كل منتجات الطباعة والتغليف بالمقاسات والأنواع الشائعة في مكان واحد.">
+  <meta name="robots" content="index,follow">
+  <style>
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;background:#F5F5F5;-webkit-font-smoothing:antialiased;}
+    html{scroll-behavior:smooth;}
+  </style>
+</helmet>
+
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;">
+  <div style="position:relative;">
+    <dc-import name="Msam-Nav" active="products" hint-size="100%,80px" style="display:block;"></dc-import>
+  </div>
+
+  <header style="padding:150px clamp(16px,4vw,40px) 24px;">
+    <div style="max-width:88rem;margin:0 auto;">
+      <span style="font-size:14px;font-weight:600;color:#8c887e;">منتجاتنا</span>
+      <h1 style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-0.03em;margin:10px 0 18px;">كل ما تحتاجه علامتك<br>من طباعة وتغليف</h1>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.8;color:rgba(21,19,31,0.62);max-width:620px;margin:0;">أكواب، صناديق، ملصقات، أكياس وتغليف مخصّص — بكل المقاسات والأنواع الشائعة. اطلب أي منتج بكمياتٍ تناسب مشروعك مع إمكانية الطباعة الكاملة بشعارك وألوانك.</p>
+    </div>
+  </header>
+
+  <main style="padding:clamp(40px,5vw,64px) clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
+    <div style="max-width:88rem;margin:0 auto;display:flex;flex-direction:column;gap:clamp(56px,7vw,96px);">
+      <sc-for list="{{ categories }}" as="c">
+        <section id="{{ c.id }}" style="scroll-margin-top:90px;">
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:start;margin-bottom:30px;">
+            <div>
+              <div style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:15px;color:#bdb9b0;margin-bottom:10px;">{{ c.num }}</div>
+              <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,42px);line-height:1.12;letter-spacing:-0.03em;margin:0;">{{ c.title }}</h2>
+            </div>
+            <p style="font-size:clamp(15px,1.3vw,17px);line-height:1.85;color:rgba(21,19,31,0.62);margin:0;padding-top:6px;">{{ c.intro }}</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px;">
+            <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="5">
+              <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #ececE6;border-radius:18px;padding:12px;transition:box-shadow .25s,transform .25s;" style-hover="box-shadow:0 20px 44px -26px rgba(21,19,31,0.4);transform:translateY(-3px);">
+                <div style="height:158px;border-radius:13px;overflow:hidden;margin-bottom:14px;background:#efeee9;">
+                  <img data-src="{{ c.banner }}" alt="{{ it.name }} بشعار مسام" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+                <div style="padding:0 6px 6px;">
+                  <h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:17px;margin:0 0 7px;letter-spacing:-0.01em;">{{ it.name }}</h3>
+                  <p style="font-size:13.5px;line-height:1.7;color:rgba(21,19,31,0.58);margin:0;">{{ it.spec }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+      </sc-for>
+    </div>
+  </main>
+
+  <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
+    <div style="max-width:88rem;margin:0 auto;background:#15131f;border-radius:28px;padding:clamp(36px,5vw,64px);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;">
+      <div>
+        <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.02em;margin:0 0 12px;">لم تجد ما تبحث عنه؟</h2>
+        <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.65);margin:0;max-width:520px;">نصنع أي منتج تغليف أو طباعة حسب الطلب. تواصل معنا وأخبرنا بفكرتك وسنحوّلها إلى واقع.</p>
+      </div>
+      <a href="https://wa.me/966538297921?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D9%85%D9%86%D8%AA%D8%AC%20%D9%85%D8%AE%D8%B5%D8%B5" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#15131f;font-weight:600;font-size:16px;padding:15px 28px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:transform .2s;" style-hover="transform:scale(1.04);">اطلب منتجًا مخصّصًا<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg></a>
+    </div>
+  </section>
+
+  <dc-import name="Msam-Footer" hint-size="100%,420px" style="display:block;"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    document.title = 'المنتجات | مسام للطباعة والتغليف — أكواب، صناديق، ملصقات وتغليف';
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    this.hydrateImgs();
+  }
+  componentDidUpdate() { this.hydrateImgs(); }
+  hydrateImgs() {
+    document.querySelectorAll('img[data-src]').forEach((im) => {
+      const s = im.getAttribute('data-src');
+      if (s && s.indexOf('{{') === -1 && im.getAttribute('src') !== s) im.setAttribute('src', s);
+    });
+  }
+  renderVals() {
+    const categories = [
+      {
+        id: 'cups', num: '01', title: 'الأكواب الورقية', anchor: '#cups', banner: 'assets/products/cups.png',
+        intro: 'أكواب ورقية بجودة عالية مناسبة للمشروبات الساخنة والباردة، قابلة للطباعة الكاملة بشعارك وألوانك. متوفرة مفردة ومزدوجة بكل المقاسات الشائعة مع الأغطية المطابقة.',
+        items: [
+          { name: 'أكواب مفردة الجدار', spec: 'مقاسات 4 / 6.5 / 8 / 9 / 12 أونصة — للمشروبات الساخنة', photo: 'صورة: أكواب ورقية مفردة الجدار مطبوعة' },
+          { name: 'أكواب مزدوجة الجدار', spec: 'مقاسات 8 / 12 / 16 أونصة — عزل حراري وملمس فاخر', photo: 'صورة: أكواب ورقية مزدوجة الجدار' },
+          { name: 'أكواب المشروبات الباردة', spec: 'مقاسات 12 / 16 / 22 أونصة — ورقية أو شفافة', photo: 'صورة: أكواب مشروبات باردة' },
+          { name: 'جميع أنواع الأغطية', spec: 'أغطية مسطحة ومقببة وأكمام عازلة للحرارة', photo: 'صورة: أغطية أكواب وأكمام عازلة' },
+        ],
+      },
+      {
+        id: 'boxes', num: '02', title: 'الصناديق والكراتين', anchor: '#boxes', banner: 'assets/products/pizza-box2.png',
+        intro: 'صناديق وكراتين متينة من الكرتون المموّج والمقوّى، مصمّمة للمطاعم والمتاجر والشحن. قابلة للطباعة بألوان كاملة لإبراز هوية علامتك على كل طلب.',
+        items: [
+          { name: 'صناديق البيتزا', spec: 'مقاسات 6" / 9" / 12" / 14" — كرتون مموّج مقوّى', photo: 'صورة: صناديق بيتزا مطبوعة' },
+          { name: 'علب البروست', spec: 'علب دجاج بروست بأحجام مختلفة مع فتحات تهوية وطباعة كاملة', photo: 'صورة: علب بروست مطبوعة' },
+          { name: 'صناديق البرجر والوجبات', spec: 'علب برجر ومقبلات بإغلاق محكم وطباعة كاملة', photo: 'صورة: علب برجر ووجبات' },
+          { name: 'صناديق الشحن والتوصيل', spec: 'كرتون مموّج 3 و5 طبقات بأحجام متعددة', photo: 'صورة: صناديق شحن كرتون مموج' },
+          { name: 'علب الكيك والحلويات', spec: 'علب بنوافذ شفافة بأحجام مختلفة', photo: 'صورة: علب كيك وحلويات' },
+        ],
+      },
+      {
+        id: 'stickers', num: '03', title: 'الملصقات والستيكر', anchor: '#stickers', banner: 'assets/products/stickers.png',
+        intro: 'ملصقات وليبل بجودة طباعة عالية وخامات متعددة، مثالية لتغليف المنتجات والعلامات التجارية. متوفرة بأشكال ومقاسات مخصّصة حسب طلبك.',
+        items: [
+          { name: 'ملصقات رول (Roll)', spec: 'لخطوط التعبئة السريعة بأشكال دائرية ومربعة', photo: 'صورة: ملصقات رول' },
+          { name: 'ملصقات شيت (Sheet)', spec: 'أوراق ملصقات متعددة القطع سهلة الفصل', photo: 'صورة: ملصقات شيت' },
+          { name: 'ملصقات مقصوصة (Die-cut)', spec: 'مقصوصة بدقة حسب أي شكل تريده', photo: 'صورة: ملصقات مقصوصة حسب الشكل' },
+          { name: 'ملصقات شفافة', spec: 'تأثير زجاجي أنيق على العبوات', photo: 'صورة: ملصقات شفافة' },
+          { name: 'ملصقات فويل ذهبي/فضي', spec: 'لمسة فاخرة لامعة للمنتجات المميزة', photo: 'صورة: ملصقات فويل ذهبي' },
+        ],
+      },
+      {
+        id: 'bags', num: '04', title: 'الأكياس الورقية', anchor: '#bags', banner: 'assets/products/bags.png',
+        intro: 'أكياس ورقية صديقة للبيئة بمقابض متينة، مناسبة للمتاجر والمطاعم وخدمات التوصيل، مع طباعة كاملة لشعارك بألوان زاهية.',
+        items: [
+          { name: 'أكياس كرافت بمقابض', spec: 'مقاسات صغيرة ومتوسطة وكبيرة بمقابض ملتوية أو مسطحة', photo: 'صورة: أكياس كرافت بمقابض' },
+          { name: 'أكياس التوصيل', spec: 'أكياس متينة لخدمات التوصيل والوجبات السريعة', photo: 'صورة: أكياس توصيل طعام' },
+          { name: 'أكياس فاخرة مطفية/لامعة', spec: 'تشطيب فاخر للمتاجر والهدايا', photo: 'صورة: أكياس تسوق فاخرة' },
+          { name: 'أكياس ورقية مسطحة', spec: 'للمخبوزات والمنتجات الخفيفة', photo: 'صورة: أكياس ورقية مسطحة' },
+        ],
+      },
+      {
+        id: 'food', num: '05', title: 'تغليف الطعام', anchor: '#food', banner: 'assets/products/food-deli.png',
+        intro: 'حلول تغليف آمنة وملائمة للأطعمة الساخنة والباردة، مصنوعة من خامات معتمدة للتلامس الغذائي وقابلة للطباعة بهوية مطعمك.',
+        items: [
+          { name: 'علب كرافت للطعام', spec: 'علب كرافت بأحجام متعددة للوجبات والسلطات', photo: 'صورة: علب كرافت للطعام' },
+          { name: 'علب كلامشيل (Clamshell)', spec: 'علب بإغلاق مفصلي للوجبات الجاهزة', photo: 'صورة: علب كلامشيل' },
+          { name: 'أوراق التغليف', spec: 'أوراق مقاومة للدهون للبرجر والساندويتش', photo: 'صورة: أوراق تغليف طعام' },
+          { name: 'علب السلطة والشوربة', spec: 'علب ورقية مع أغطية محكمة بأحجام مختلفة', photo: 'صورة: علب سلطة وشوربة' },
+          { name: 'الصحون والأطباق الورقية', spec: 'صحون ورقية متينة بمقاسات متعددة', photo: 'صورة: صحون ورقية' },
+        ],
+      },
+      {
+        id: 'custom', num: '06', title: 'التغليف المخصّص', anchor: '#custom', banner: 'assets/products/custom.png',
+        intro: 'لا حدود لما يمكننا صنعه. نصمّم وننتج حلول تغليف فريدة بالكامل حسب هوية علامتك التجارية — من الفكرة إلى المنتج بين يديك.',
+        items: [
+          { name: 'تغليف بهوية كاملة', spec: 'منظومة تغليف موحّدة بألوان وشعار علامتك', photo: 'صورة: تغليف بهوية بصرية كاملة' },
+          { name: 'صناديق الاشتراكات', spec: 'صناديق تجربة فتح مميزة للتجارة الإلكترونية', photo: 'صورة: صناديق اشتراك مخصصة' },
+          { name: 'شرائط وأوراق التغليف', spec: 'شرائط لاصقة وأوراق تغليف مطبوعة بشعارك', photo: 'صورة: شرائط وأوراق تغليف مطبوعة' },
+          { name: 'بطاقات وإضافات مرافقة', spec: 'بطاقات شكر وملصقات تغليف مكمّلة', photo: 'صورة: بطاقات شكر وإضافات تغليف' },
+        ],
+      },
+    ];
+    return { categories };
+  }
+}
+</script>
+</body>
+</html>
