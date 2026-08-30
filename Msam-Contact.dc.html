@@ -22,6 +22,12 @@
     input,select,textarea{font-family:'IBM Plex Sans Arabic',sans-serif;}
     input::placeholder,textarea::placeholder{color:#a9a59c;}
     input:focus,select:focus,textarea:focus{outline:none;border-color:#15131f !important;}
+    @media (max-width:900px){
+      .msam-contact-grid{grid-template-columns:1fr !important;}
+    }
+    @media (max-width:560px){
+      .msam-form-grid{grid-template-columns:1fr !important;}
+    }
   </style>
 </helmet>
 
@@ -30,7 +36,7 @@
     <dc-import name="Msam-Nav" active="contact" hint-size="100%,80px" style="display:block;"></dc-import>
   </div>
 
-  <header style="padding:150px clamp(16px,4vw,40px) clamp(32px,4vw,48px);">
+  <header style="padding:clamp(100px,26vw,150px) clamp(16px,4vw,40px) clamp(32px,4vw,48px);">
     <div style="max-width:88rem;margin:0 auto;">
       <span style="font-size:14px;font-weight:600;color:#8c887e;">تواصل معنا</span>
       <h1 style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-0.03em;margin:10px 0 18px;">لنبدأ مشروعك القادم</h1>
@@ -39,11 +45,11 @@
   </header>
 
   <main style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
-    <div style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(24px,3vw,40px);align-items:start;">
+    <div class="msam-contact-grid" style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(24px,3vw,40px);align-items:start;">
 
       <form onSubmit="{{ onSubmit }}" style="background:#fff;border:1px solid #ececE6;border-radius:26px;padding:clamp(24px,3vw,40px);">
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:24px;margin:0 0 24px;letter-spacing:-0.01em;">اطلب عرض سعر</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="msam-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;">الاسم
             <input type="text" value="{{ name }}" onInput="{{ onName }}" placeholder="اسمك الكامل" style="border:1px solid #e1dfd9;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
           </label>

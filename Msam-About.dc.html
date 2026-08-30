@@ -19,6 +19,15 @@
   <style>
     *{box-sizing:border-box;}
     html,body{margin:0;padding:0;background:#F5F5F5;-webkit-font-smoothing:antialiased;}
+    @media (max-width:900px){
+      .msam-about-hero-grid{grid-template-columns:1fr !important;gap:32px !important;}
+      .msam-mission-grid{grid-template-columns:repeat(2,1fr) !important;}
+      .msam-about-feature-grid{grid-template-columns:1fr !important;gap:28px !important;}
+    }
+    @media (max-width:620px){
+      .msam-mission-grid{grid-template-columns:1fr !important;}
+      .msam-info-bar{gap:20px !important;}
+    }
   </style>
 </helmet>
 
@@ -27,8 +36,8 @@
     <dc-import name="Msam-Nav" active="about" hint-size="100%,80px" style="display:block;"></dc-import>
   </div>
 
-  <header style="padding:150px clamp(16px,4vw,40px) clamp(40px,5vw,64px);">
-    <div style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;">
+  <header style="padding:clamp(100px,26vw,150px) clamp(16px,4vw,40px) clamp(40px,5vw,64px);">
+    <div class="msam-about-hero-grid" style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;">
       <div>
         <span style="font-size:14px;font-weight:600;color:#8c887e;">من نحن</span>
         <h1 style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-0.03em;margin:10px 0 20px;">نطبع لعلامتك<br>أثرًا يدوم</h1>
@@ -47,7 +56,7 @@
   </header>
 
   <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,96px);">
-    <div style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+    <div class="msam-mission-grid" style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
       <div style="background:#fff;border:1px solid #ececE6;border-radius:22px;padding:32px;">
         <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#FF1E3C,#FF7A1A);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:22px;margin:0 0 12px;">رسالتنا</h2>
@@ -67,7 +76,7 @@
   </section>
 
   <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,96px);">
-    <div style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;">
+    <div class="msam-about-feature-grid" style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;">
       <div style="height:clamp(300px,36vw,440px);border-radius:24px;overflow:hidden;order:2;box-shadow:0 30px 70px -34px rgba(21,19,31,0.28);background:radial-gradient(circle at 70% 30%, #FFF3E9, #FBE9F3 65%, #F0E6FA);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;position:relative;">
         <div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#FF7A1A,#FFC107,#FF1E3C,#E91E8C,#7B1FA2);"></div>
         <img src="assets/msam-logo.png" alt="شعار مسام للطباعة والتغليف" width="120" style="width:clamp(96px,15vw,140px);height:auto;display:block;margin-bottom:22px;">
@@ -91,7 +100,7 @@
 
   <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
     <div style="max-width:88rem;margin:0 auto;background:#fff;border:1px solid #ececE6;border-radius:24px;padding:clamp(28px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
-      <div style="display:flex;flex-wrap:wrap;gap:40px;">
+      <div class="msam-info-bar" style="display:flex;flex-wrap:wrap;gap:40px;">
         <div><div style="font-size:13.5px;color:#8c887e;margin-bottom:6px;">السجل التجاري</div><div dir="ltr" style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:22px;text-align:right;">1010749013</div></div>
         <div><div style="font-size:13.5px;color:#8c887e;margin-bottom:6px;">الرقم الضريبي (VAT)</div><div dir="ltr" style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:22px;text-align:right;">311058939500003</div></div>
         <div><div style="font-size:13.5px;color:#8c887e;margin-bottom:6px;">المقر</div><div style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:22px;">الرياض، السعودية</div></div>

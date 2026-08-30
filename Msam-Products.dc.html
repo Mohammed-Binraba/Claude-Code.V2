@@ -20,6 +20,13 @@
     *{box-sizing:border-box;}
     html,body{margin:0;padding:0;background:#F5F5F5;-webkit-font-smoothing:antialiased;}
     html{scroll-behavior:smooth;}
+    @media (max-width:760px){
+      .msam-cat-head{grid-template-columns:1fr !important;gap:14px !important;}
+    }
+    @media (max-width:560px){
+      .msam-cta-banner{flex-direction:column !important;align-items:stretch !important;text-align:center;}
+      .msam-cta-banner a{justify-content:center;}
+    }
   </style>
 </helmet>
 
@@ -28,7 +35,7 @@
     <dc-import name="Msam-Nav" active="products" hint-size="100%,80px" style="display:block;"></dc-import>
   </div>
 
-  <header style="padding:150px clamp(16px,4vw,40px) 24px;">
+  <header style="padding:clamp(100px,26vw,150px) clamp(16px,4vw,40px) 24px;">
     <div style="max-width:88rem;margin:0 auto;">
       <span style="font-size:14px;font-weight:600;color:#8c887e;">منتجاتنا</span>
       <h1 style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-0.03em;margin:10px 0 18px;">كل ما تحتاجه علامتك<br>من طباعة وتغليف</h1>
@@ -40,7 +47,7 @@
     <div style="max-width:88rem;margin:0 auto;display:flex;flex-direction:column;gap:clamp(56px,7vw,96px);">
       <sc-for list="{{ categories }}" as="c">
         <section id="{{ c.id }}" style="scroll-margin-top:90px;">
-          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:start;margin-bottom:30px;">
+          <div class="msam-cat-head" style="display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:start;margin-bottom:30px;">
             <div>
               <div style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:15px;color:#bdb9b0;margin-bottom:10px;">{{ c.num }}</div>
               <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,42px);line-height:1.12;letter-spacing:-0.03em;margin:0;">{{ c.title }}</h2>
@@ -66,7 +73,7 @@
   </main>
 
   <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
-    <div style="max-width:88rem;margin:0 auto;background:#15131f;border-radius:28px;padding:clamp(36px,5vw,64px);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;">
+    <div class="msam-cta-banner" style="max-width:88rem;margin:0 auto;background:#15131f;border-radius:28px;padding:clamp(36px,5vw,64px);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;">
       <div>
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.02em;margin:0 0 12px;">لم تجد ما تبحث عنه؟</h2>
         <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.65);margin:0;max-width:520px;">نصنع أي منتج تغليف أو طباعة حسب الطلب. تواصل معنا وأخبرنا بفكرتك وسنحوّلها إلى واقع.</p>
