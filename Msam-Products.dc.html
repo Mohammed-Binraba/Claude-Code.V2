@@ -20,6 +20,7 @@
     *{box-sizing:border-box;}
     html,body{margin:0;padding:0;background:#F5F5F5;-webkit-font-smoothing:antialiased;}
     html{scroll-behavior:smooth;}
+    .msam-cat-head > *,.msam-items-grid > *{min-width:0;}
     @media (max-width:760px){
       .msam-cat-head{grid-template-columns:1fr !important;gap:14px !important;}
     }
@@ -54,7 +55,7 @@
             </div>
             <p style="font-size:clamp(15px,1.3vw,17px);line-height:1.85;color:rgba(21,19,31,0.62);margin:0;padding-top:6px;">{{ c.intro }}</p>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px;">
+          <div class="msam-items-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px;">
             <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="5">
               <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #ececE6;border-radius:18px;padding:12px;transition:box-shadow .25s,transform .25s;" style-hover="box-shadow:0 20px 44px -26px rgba(21,19,31,0.4);transform:translateY(-3px);">
                 <div style="height:158px;border-radius:13px;overflow:hidden;margin-bottom:14px;background:#efeee9;">

@@ -21,6 +21,11 @@
     *{box-sizing:border-box;}
     html,body{margin:0;padding:0;background:#F5F5F5;-webkit-font-smoothing:antialiased;}
     @keyframes msamMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    /* Grid/flex items default to min-width:auto, so an item whose min-content is
+       wide (e.g. the nowrap marquee capped at 520px) forces its track wider than
+       the viewport and the row gets clipped by overflow-x:hidden. */
+    .msam-hero-grid > *,.msam-two-col > *,.msam-feature-grid > *,.msam-products-grid > *,.msam-steps-grid > *{min-width:0;}
+    .msam-hero-marquee{max-width:min(520px,100%) !important;}
     @media (max-width:900px){
       .msam-hero-section{min-height:auto !important;}
       .msam-hero-content{padding:96px clamp(16px,4vw,40px) 36px !important;}
@@ -63,7 +68,7 @@
             <a href="Msam-Products.dc.html" style="display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #e1dfd9;color:#15131f;font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px;text-decoration:none;transition:border-color .2s,background .2s;" style-hover="background:#fbfbfa;border-color:#15131f;">تصفّح المنتجات</a>
           </div>
 
-          <div style="margin-top:48px;max-width:520px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);">
+          <div class="msam-hero-marquee" style="margin-top:48px;max-width:520px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);">
             <div style="display:flex;width:max-content;animation:msamMarquee 24s linear infinite;">
               <div style="display:flex;align-items:center;gap:34px;padding-left:34px;color:rgba(21,19,31,0.45);font-size:14px;font-weight:500;white-space:nowrap;"><span>أكواب ورقية</span><span>·</span><span>كرتون مموّج</span><span>·</span><span>طباعة أوفست</span><span>·</span><span>ملصقات</span><span>·</span><span>أكياس كرافت</span><span>·</span><span>تغليف مخصّص</span><span>·</span></div>
               <div style="display:flex;align-items:center;gap:34px;padding-left:34px;color:rgba(21,19,31,0.45);font-size:14px;font-weight:500;white-space:nowrap;" aria-hidden="true"><span>أكواب ورقية</span><span>·</span><span>كرتون مموّج</span><span>·</span><span>طباعة أوفست</span><span>·</span><span>ملصقات</span><span>·</span><span>أكياس كرافت</span><span>·</span><span>تغليف مخصّص</span><span>·</span></div>
