@@ -8,6 +8,8 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" href="assets/msam-logo.png">
+  <link rel="apple-touch-icon" href="assets/msam-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -23,9 +25,25 @@
     input::placeholder,textarea::placeholder{color:#a9a59c;}
     input:focus,select:focus,textarea:focus{outline:none;border-color:#15131f !important;}
   </style>
+  <style>
+
+  /* ---- MSAM responsive base ---- */
+  html{-webkit-text-size-adjust:100%;scroll-padding-top:96px;}
+  img,svg,video{max-width:100%;}
+  a,button,label{-webkit-tap-highlight-color:rgba(21,19,31,.08);}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  }
+  /* 16px minimum stops iOS Safari zooming the page on field focus */
+  @media (max-width:768px){
+    .msam-form input,.msam-form select,.msam-form textarea{font-size:16px !important;}
+    .msam-form button[type="submit"]{min-height:50px;}
+  }
+  @media (max-width:560px){ .msam-form-grid{grid-template-columns:1fr !important;} }
+  </style>
 </helmet>
 
-<div dir="ltr" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;">
+<div dir="ltr" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;overflow-x:clip;">
   <div style="position:relative;">
     <dc-import name="Msam-Nav-EN" active="contact" hint-size="100%,80px" style="display:block;"></dc-import>
   </div>
@@ -39,11 +57,11 @@
   </header>
 
   <main style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
-    <div style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,40px);align-items:start;">
+    <div class="msam-contact-grid" style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,40px);align-items:start;">
 
-      <form onSubmit="{{ onSubmit }}" style="background:#fff;border:1px solid #ececE6;border-radius:26px;padding:clamp(24px,3vw,40px);">
+      <form class="msam-form" onSubmit="{{ onSubmit }}" style="background:#fff;border:1px solid #ececE6;border-radius:26px;padding:clamp(24px,3vw,40px);">
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:24px;margin:0 0 24px;letter-spacing:-0.01em;">Request a quote</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;">
+        <div class="msam-form-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;">
           <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;min-width:0;">Name
             <input type="text" value="{{ name }}" onInput="{{ onName }}" placeholder="Your full name" style="border:1px solid #e1dfd9;min-width:0;width:100%;box-sizing:border-box;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
           </label>

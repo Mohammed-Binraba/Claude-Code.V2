@@ -8,6 +8,8 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" href="assets/msam-logo.png">
+  <link rel="apple-touch-icon" href="assets/msam-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
@@ -23,14 +25,37 @@
     @keyframes msamMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"مسام للطباعة والتغليف","alternateName":"Msam Professional Printing & Packaging","description":"تصنيع وطباعة الأكواب الورقية والصناديق والملصقات والأكياس والتغليف المخصّص في المملكة العربية السعودية.","telephone":"+966538297921","areaServed":"SA","address":{"@type":"PostalAddress","addressCountry":"SA","addressRegion":"منطقة الرياض","addressLocality":"الرياض","streetAddress":"حي الدار البيضاء"},"taxID":"311058939500003","vatID":"311058939500003"}</script>
+  <style>
+
+  /* ---- MSAM responsive base ---- */
+  html{-webkit-text-size-adjust:100%;scroll-padding-top:96px;}
+  img,svg,video{max-width:100%;}
+  a,button,label{-webkit-tap-highlight-color:rgba(21,19,31,.08);}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  }
+  @supports (min-height:100svh){ .msam-hero-section{min-height:100svh !important;} }
+  @media (max-width:900px){
+    .msam-hero-section{min-height:auto !important;}
+    .msam-hero-content{padding:112px clamp(16px,4vw,40px) 56px !important;}
+    .msam-why-grid{grid-template-columns:1fr !important;gap:24px !important;}
+    .msam-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+    .msam-steps-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  }
+  @media (max-width:560px){
+    .msam-feature-grid{grid-template-columns:1fr !important;}
+    .msam-steps-grid{grid-template-columns:1fr !important;gap:22px !important;}
+    .msam-products-grid{grid-template-columns:1fr !important;}
+  }
+  </style>
 </helmet>
 
-<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;">
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;overflow-x:clip;">
 
-  <section style="position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;">
+  <section class="msam-hero-section" style="position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;">
     <dc-import name="Msam-Nav" active="home" hint-size="100%,80px" style="display:block;"></dc-import>
 
-    <div style="flex:1;display:flex;align-items:center;padding:132px clamp(16px,4vw,40px) 72px;">
+    <div class="msam-hero-content" style="flex:1;display:flex;align-items:center;padding:132px clamp(16px,4vw,40px) 72px;">
       <div style="max-width:760px;margin:0 auto;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;">
 
         <div>
@@ -63,7 +88,7 @@
 
   <section style="padding:clamp(56px,8vw,104px) clamp(16px,4vw,40px);">
     <div style="max-width:88rem;margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:56px;">
+      <div class="msam-why-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:56px;">
         <div>
           <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-0.03em;margin:0 0 24px;">لماذا مسام؟</h2>
           <a href="Msam-About.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:#15131f;color:#fff;font-weight:600;font-size:15px;padding:12px 10px 12px 22px;border-radius:999px;text-decoration:none;transition:background .2s;" style-hover="background:#2b2644;">تعرّف علينا<span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#fff;"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#15131f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg></span></a>
@@ -71,7 +96,7 @@
         <p style="font-size:clamp(20px,2.2vw,28px);line-height:1.6;color:rgba(21,19,31,0.72);margin:0;font-weight:500;letter-spacing:-0.01em;">من الفكرة إلى المنتج النهائي بين يديك، نوفّر لعلامتك تغليفًا وطباعةً بمعايير عالية، بألوانٍ دقيقة ومواد موثوقة وأسعارٍ تنافسية.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+      <div class="msam-feature-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
         <div style="background:#fff;border:1px solid #ececE6;border-radius:20px;padding:28px;">
           <div style="width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,#FF1E3C,#FF7A1A);display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7 18.2l1.9-5.8L4 8.8h6.1Z"></path></svg></div>
           <h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:19px;margin:0 0 10px;">جودة طباعة فائقة</h3>
@@ -106,7 +131,7 @@
         <a href="Msam-Products.dc.html" style="color:#15131f;font-weight:600;font-size:15px;text-decoration:none;border-bottom:2px solid #15131f;padding-bottom:2px;">عرض كل المنتجات</a>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;">
+      <div class="msam-products-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;">
         <sc-for list="{{ products }}" as="p">
           <a href="{{ p.href }}" style="display:flex;flex-direction:column;background:#fff;border:1px solid #ececE6;border-radius:22px;padding:14px;text-decoration:none;color:#15131f;transition:box-shadow .25s,transform .25s;" style-hover="box-shadow:0 22px 50px -28px rgba(21,19,31,0.4);transform:translateY(-3px);">
             <div style="height:200px;border-radius:14px;overflow:hidden;margin-bottom:18px;background:#efeee9;">
@@ -126,7 +151,7 @@
   <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
     <div style="max-width:88rem;margin:0 auto;background:#15131f;border-radius:28px;padding:clamp(36px,5vw,64px);color:#fff;">
       <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.02em;margin:0 0 44px;">كيف نعمل؟</h2>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;">
+      <div class="msam-steps-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;">
         <div><div style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:15px;color:#FF7A1A;margin-bottom:14px;">01</div><h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:19px;margin:0 0 8px;">اطلب عرض السعر</h3><p style="font-size:14.5px;line-height:1.7;color:rgba(255,255,255,0.6);margin:0;">أخبرنا بالمنتج والكمية والمقاس عبر واتساب أو نموذج التواصل.</p></div>
         <div><div style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:15px;color:#FFC107;margin-bottom:14px;">02</div><h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:19px;margin:0 0 8px;">نصمّم معك</h3><p style="font-size:14.5px;line-height:1.7;color:rgba(255,255,255,0.6);margin:0;">نجهّز التصميم ونرسل لك معاينة قبل بدء الإنتاج.</p></div>
         <div><div style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:15px;color:#E91E8C;margin-bottom:14px;">03</div><h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:19px;margin:0 0 8px;">نطبع وننتج</h3><p style="font-size:14.5px;line-height:1.7;color:rgba(255,255,255,0.6);margin:0;">نُنتج طلبك بأحدث الآلات وبأعلى معايير الجودة.</p></div>

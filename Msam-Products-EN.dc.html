@@ -8,6 +8,8 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" href="assets/msam-logo.png">
+  <link rel="apple-touch-icon" href="assets/msam-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,9 +23,27 @@
     html,body{margin:0;padding:0;background:#F5F5F5;-webkit-font-smoothing:antialiased;}
     html{scroll-behavior:smooth;}
   </style>
+  <style>
+
+  /* ---- MSAM responsive base ---- */
+  html{-webkit-text-size-adjust:100%;scroll-padding-top:96px;}
+  img,svg,video{max-width:100%;}
+  a,button,label{-webkit-tap-highlight-color:rgba(21,19,31,.08);}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  }
+  .msam-cat-items{grid-template-columns:repeat(auto-fill,minmax(min(100%,232px),1fr)) !important;}
+  @media (max-width:760px){ .msam-cat-items{grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr)) !important;gap:12px !important;} }
+  @media (max-width:560px){
+    .msam-cat-items{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+    .msam-cta-banner{flex-direction:column !important;align-items:stretch !important;text-align:center;}
+    .msam-cta-banner a{justify-content:center;}
+  }
+  @media (max-width:360px){ .msam-cat-items{grid-template-columns:1fr !important;} }
+  </style>
 </helmet>
 
-<div dir="ltr" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;">
+<div dir="ltr" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;overflow-x:clip;">
   <div style="position:relative;">
     <dc-import name="Msam-Nav-EN" active="products" hint-size="100%,80px" style="display:block;"></dc-import>
   </div>
@@ -44,7 +64,7 @@
             <div style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:15px;color:#bdb9b0;margin-bottom:10px;">{{ c.num }}</div>
             <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,42px);line-height:1.12;letter-spacing:-0.03em;margin:0;">{{ c.title }}</h2>
           </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px;">
+          <div class="msam-cat-items" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px;">
             <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="5">
               <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #ececE6;border-radius:18px;padding:12px;transition:box-shadow .25s,transform .25s;" style-hover="box-shadow:0 20px 44px -26px rgba(21,19,31,0.4);transform:translateY(-3px);">
                 <div style="height:158px;border-radius:13px;overflow:hidden;margin-bottom:14px;background:#efeee9;">
@@ -63,7 +83,7 @@
   </main>
 
   <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
-    <div style="max-width:88rem;margin:0 auto;background:#15131f;border-radius:28px;padding:clamp(36px,5vw,64px);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;">
+    <div class="msam-cta-banner" style="max-width:88rem;margin:0 auto;background:#15131f;border-radius:28px;padding:clamp(36px,5vw,64px);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;">
       <div>
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);letter-spacing:-0.02em;margin:0 0 12px;">Cannot find what you need?</h2>
         <p style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.65);margin:0;max-width:520px;">We make any printing or packaging product to order. Tell us your idea and we will turn it into reality.</p>

@@ -8,6 +8,8 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" href="assets/msam-logo.png">
+  <link rel="apple-touch-icon" href="assets/msam-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
@@ -20,9 +22,21 @@
     *{box-sizing:border-box;}
     html,body{margin:0;padding:0;background:#F5F5F5;-webkit-font-smoothing:antialiased;}
   </style>
+  <style>
+
+  /* ---- MSAM responsive base ---- */
+  html{-webkit-text-size-adjust:100%;scroll-padding-top:96px;}
+  img,svg,video{max-width:100%;}
+  a,button,label{-webkit-tap-highlight-color:rgba(21,19,31,.08);}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  }
+  @media (max-width:900px){ .msam-about-cards{gap:16px !important;} }
+  @media (max-width:620px){ .msam-about-grid{gap:20px !important;} }
+  </style>
 </helmet>
 
-<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;">
+<div dir="rtl" style="font-family:'IBM Plex Sans Arabic',sans-serif;background:#F5F5F5;color:#15131f;overflow-x:hidden;overflow-x:clip;">
   <div style="position:relative;">
     <dc-import name="Msam-Nav" active="about" hint-size="100%,80px" style="display:block;"></dc-import>
   </div>
@@ -38,7 +52,7 @@
   </header>
 
   <section style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,96px);">
-    <div style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px;">
+    <div class="msam-about-cards" style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px;">
       <div style="background:#fff;border:1px solid #ececE6;border-radius:22px;padding:32px;">
         <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#FF1E3C,#FF7A1A);display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:22px;margin:0 0 12px;">رسالتنا</h2>
@@ -61,7 +75,7 @@
     <div style="max-width:88rem;margin:0 auto;">
       <div>
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1.12;letter-spacing:-0.03em;margin:0 0 30px;">لماذا يختار العملاء مسام؟</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px 40px;">
+        <div class="msam-about-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px 40px;">
           <div style="display:flex;gap:14px;align-items:flex-start;"><span style="flex-shrink:0;width:26px;height:26px;border-radius:8px;background:#15131f;display:flex;align-items:center;justify-content:center;margin-top:2px;"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div><h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:18px;margin:0 0 5px;">خامات معتمدة وآمنة</h3><p style="font-size:14.5px;line-height:1.75;color:rgba(21,19,31,0.6);margin:0;">نستخدم مواد عالية الجودة معتمدة للتلامس الغذائي وصديقة للبيئة.</p></div></div>
           <div style="display:flex;gap:14px;align-items:flex-start;"><span style="flex-shrink:0;width:26px;height:26px;border-radius:8px;background:#15131f;display:flex;align-items:center;justify-content:center;margin-top:2px;"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div><h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:18px;margin:0 0 5px;">دعم تصميمي مجاني</h3><p style="font-size:14.5px;line-height:1.75;color:rgba(21,19,31,0.6);margin:0;">فريقنا يساعدك في تجهيز التصاميم لتظهر بأفضل صورة على المنتج.</p></div></div>
           <div style="display:flex;gap:14px;align-items:flex-start;"><span style="flex-shrink:0;width:26px;height:26px;border-radius:8px;background:#15131f;display:flex;align-items:center;justify-content:center;margin-top:2px;"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div><h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:18px;margin:0 0 5px;">أسعار تنافسية وكميات مرنة</h3><p style="font-size:14.5px;line-height:1.75;color:rgba(21,19,31,0.6);margin:0;">عروض تناسب المشاريع الناشئة والشركات الكبرى على حدٍ سواء.</p></div></div>
