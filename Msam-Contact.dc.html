@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <meta name="description" content="تواصل مع مسام للطباعة والتغليف — اطلب عرض سعر لأكواب الورق، الصناديق، الملصقات والتغليف المخصّص. هاتف +966538297921، واتساب مباشر، وخدمة عملاء في الرياض، السعودية.">
-  <meta name="keywords" content="تواصل مسام, طلب عرض سعر طباعة, واتساب طباعة, رقم شركة تغليف, الرياض, السعودية">
+  <meta name="description" content="تواصل مع مسام للطباعة والتغليف، اطلب عرض سعر لأكواب الورق، الصناديق، الملصقات والتغليف المخصّص. هاتف +966538297921، واتساب مباشر، وخدمة عملاء في حي الدار البيضاء، الرياض.">
+  <meta name="keywords" content="تواصل مسام, طلب عرض سعر طباعة, واتساب طباعة, رقم شركة تغليف, حي الدار البيضاء, الرياض, السعودية">
   <meta property="og:title" content="تواصل معنا | مسام للطباعة والتغليف">
   <meta property="og:description" content="اطلب عرض سعر أو تواصل معنا مباشرة عبر واتساب.">
   <meta name="robots" content="index,follow">
@@ -22,13 +22,6 @@
     input,select,textarea{font-family:'IBM Plex Sans Arabic',sans-serif;}
     input::placeholder,textarea::placeholder{color:#a9a59c;}
     input:focus,select:focus,textarea:focus{outline:none;border-color:#15131f !important;}
-    .msam-contact-grid > *,.msam-form-grid > *{min-width:0;}
-    @media (max-width:900px){
-      .msam-contact-grid{grid-template-columns:1fr !important;}
-    }
-    @media (max-width:560px){
-      .msam-form-grid{grid-template-columns:1fr !important;}
-    }
   </style>
 </helmet>
 
@@ -37,7 +30,7 @@
     <dc-import name="Msam-Nav" active="contact" hint-size="100%,80px" style="display:block;"></dc-import>
   </div>
 
-  <header style="padding:clamp(100px,26vw,150px) clamp(16px,4vw,40px) clamp(32px,4vw,48px);">
+  <header style="padding:150px clamp(16px,4vw,40px) clamp(32px,4vw,48px);">
     <div style="max-width:88rem;margin:0 auto;">
       <span style="font-size:14px;font-weight:600;color:#8c887e;">تواصل معنا</span>
       <h1 style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-0.03em;margin:10px 0 18px;">لنبدأ مشروعك القادم</h1>
@@ -46,34 +39,34 @@
   </header>
 
   <main style="padding:0 clamp(16px,4vw,40px) clamp(56px,8vw,104px);">
-    <div class="msam-contact-grid" style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(24px,3vw,40px);align-items:start;">
+    <div style="max-width:88rem;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,3vw,40px);align-items:start;">
 
       <form onSubmit="{{ onSubmit }}" style="background:#fff;border:1px solid #ececE6;border-radius:26px;padding:clamp(24px,3vw,40px);">
         <h2 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:24px;margin:0 0 24px;letter-spacing:-0.01em;">اطلب عرض سعر</h2>
-        <div class="msam-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;">الاسم
-            <input type="text" value="{{ name }}" onInput="{{ onName }}" placeholder="اسمك الكامل" style="border:1px solid #e1dfd9;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;min-width:0;">الاسم
+            <input type="text" value="{{ name }}" onInput="{{ onName }}" placeholder="اسمك الكامل" style="border:1px solid #e1dfd9;min-width:0;width:100%;box-sizing:border-box;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
           </label>
-          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;">رقم الجوال
-            <input type="tel" value="{{ phone }}" onInput="{{ onPhone }}" placeholder="05XXXXXXXX" dir="ltr" style="border:1px solid #e1dfd9;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;text-align:right;transition:border-color .2s;">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;min-width:0;">رقم الجوال
+            <input type="tel" value="{{ phone }}" onInput="{{ onPhone }}" placeholder="05XXXXXXXX" dir="ltr" style="border:1px solid #e1dfd9;min-width:0;width:100%;box-sizing:border-box;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;text-align:right;transition:border-color .2s;">
           </label>
-          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;">نوع المنتج
-            <select value="{{ product }}" onChange="{{ onProduct }}" style="border:1px solid #e1dfd9;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;min-width:0;">نوع المنتج
+            <select value="{{ product }}" onChange="{{ onProduct }}" style="border:1px solid #e1dfd9;min-width:0;width:100%;box-sizing:border-box;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
               <option value="أكواب ورقية">أكواب ورقية</option>
               <option value="صناديق وكراتين">صناديق وكراتين</option>
               <option value="ملصقات وستيكر">ملصقات وستيكر</option>
               <option value="أكياس ورقية">أكياس ورقية</option>
               <option value="تغليف طعام">تغليف طعام</option>
-              <option value="تغليف مخصّص">تغليف مخصّص</option>
+              <option value="تغليف مخصّص">تغليف مخصّص</option><option value="الطباعة ثلاثية الأبعاد">الطباعة ثلاثية الأبعاد</option>
               <option value="غير ذلك">غير ذلك</option>
             </select>
           </label>
-          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;">الكمية التقريبية
-            <input type="text" value="{{ qty }}" onInput="{{ onQty }}" placeholder="مثال: 1000 قطعة" style="border:1px solid #e1dfd9;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;min-width:0;">الكمية التقريبية
+            <input type="text" value="{{ qty }}" onInput="{{ onQty }}" placeholder="مثال: 1000 قطعة" style="border:1px solid #e1dfd9;min-width:0;width:100%;box-sizing:border-box;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;transition:border-color .2s;">
           </label>
         </div>
         <label style="display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:600;color:#56524b;margin-top:16px;">تفاصيل الطلب
-          <textarea value="{{ msg }}" onInput="{{ onMsg }}" rows="4" placeholder="أخبرنا عن المقاسات، الألوان، أو أي متطلبات خاصة..." style="border:1px solid #e1dfd9;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;resize:vertical;transition:border-color .2s;"></textarea>
+          <textarea value="{{ msg }}" onInput="{{ onMsg }}" rows="4" placeholder="أخبرنا عن المقاسات، الألوان، أو أي متطلبات خاصة..." style="border:1px solid #e1dfd9;min-width:0;width:100%;box-sizing:border-box;border-radius:12px;padding:13px 15px;font-size:15px;color:#15131f;background:#fafaf8;resize:vertical;transition:border-color .2s;"></textarea>
         </label>
         <button type="submit" style="margin-top:24px;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#0a3a1d;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:16.5px;padding:16px;border:none;border-radius:14px;cursor:pointer;transition:filter .2s;" style-hover="filter:brightness(1.06);">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.945c0 2.096.549 4.14 1.595 5.945L0 24l6.305-1.654a11.95 11.95 0 0 0 5.71 1.454h.005c6.585 0 11.946-5.359 11.949-11.945a11.86 11.86 0 0 0-3.449-8.406ZM12.02 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.36-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.437-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.892 6.994c-.003 5.45-4.437 9.884-9.885 9.884Z"/></svg>
@@ -91,17 +84,23 @@
           <span style="flex-shrink:0;width:48px;height:48px;border-radius:14px;background:#25D366;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" width="24" height="24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.945c0 2.096.549 4.14 1.595 5.945L0 24l6.305-1.654a11.95 11.95 0 0 0 5.71 1.454h.005c6.585 0 11.946-5.359 11.949-11.945a11.86 11.86 0 0 0-3.449-8.406ZM12.02 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.36-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.437-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.892 6.994c-.003 5.45-4.437 9.884-9.885 9.884Z"/></svg></span>
           <div><div style="font-size:13.5px;color:#8c887e;margin-bottom:4px;">واتساب</div><div style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:18px;">محادثة فورية</div></div>
         </a>
-        <div style="display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #ececE6;border-radius:20px;padding:22px;">
-          <span style="flex-shrink:0;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#FF1E3C,#9C27B0);display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-          <div><div style="font-size:13.5px;color:#8c887e;margin-bottom:4px;">الموقع</div><div style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:18px;">الرياض، المملكة العربية السعودية</div></div>
+        <div style="display:flex;align-items:flex-start;gap:16px;background:#fff;border:1px solid #ececE6;border-radius:20px;padding:22px;">
+          <span style="flex-shrink:0;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#FF7A1A,#E91E8C);display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div style="min-width:0;"><div style="font-size:13.5px;color:#8c887e;margin-bottom:6px;">البريد الإلكتروني</div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <a href="mailto:customerservice@msamprints.com" dir="ltr" style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:16px;color:#15131f;text-decoration:none;text-align:right;overflow-wrap:anywhere;transition:color .2s;" style-hover="color:#E91E8C;">customerservice@msamprints.com</a>
+              <a href="mailto:info@msamprints.com" dir="ltr" style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:16px;color:#15131f;text-decoration:none;text-align:right;overflow-wrap:anywhere;transition:color .2s;" style-hover="color:#E91E8C;">info@msamprints.com</a>
+            </div>
+          </div>
         </div>
         <div style="display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #ececE6;border-radius:20px;padding:22px;">
           <span style="flex-shrink:0;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#E91E8C,#7B1FA2);display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-          <div><div style="font-size:13.5px;color:#8c887e;margin-bottom:4px;">ساعات العمل</div><div style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:18px;">السبت – الخميس · 9ص – 9م</div></div>
+          <div><div style="font-size:13.5px;color:#8c887e;margin-bottom:4px;">ساعات العمل</div><div style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:18px;">السبت إلى الخميس · 9ص إلى 9م</div></div>
         </div>
         <div style="background:#fff;border:1px solid #ececE6;border-radius:20px;padding:18px;display:flex;gap:20px;flex-wrap:wrap;">
           <div><div style="font-size:12.5px;color:#8c887e;margin-bottom:4px;">السجل التجاري</div><div dir="ltr" style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:15px;text-align:right;">1010749013</div></div>
           <div><div style="font-size:12.5px;color:#8c887e;margin-bottom:4px;">الرقم الضريبي</div><div dir="ltr" style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:15px;text-align:right;">311058939500003</div></div>
+          <div><div style="font-size:12.5px;color:#8c887e;margin-bottom:4px;">الموقع</div><div style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:15px;">حي الدار البيضاء، الرياض، السعودية</div></div>
         </div>
       </div>
 
@@ -137,11 +136,11 @@ class Component extends DCLogic {
         const s = this.state;
         const lines = [
           'السلام عليكم، أرغب بطلب عرض سعر من مسام:',
-          'الاسم: ' + (s.name || '—'),
-          'الجوال: ' + (s.phone || '—'),
+          'الاسم: ' + (s.name || 'غير محدد'),
+          'الجوال: ' + (s.phone || 'غير محدد'),
           'المنتج: ' + s.product,
-          'الكمية: ' + (s.qty || '—'),
-          'التفاصيل: ' + (s.msg || '—'),
+          'الكمية: ' + (s.qty || 'غير محدد'),
+          'التفاصيل: ' + (s.msg || 'غير محدد'),
         ];
         const url = 'https://wa.me/966538297921?text=' + encodeURIComponent(lines.join('\n'));
         window.open(url, '_blank', 'noopener');
