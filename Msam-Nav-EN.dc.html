@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<style>
+  /* ---- MSAM responsive base ---- */
+  html{-webkit-text-size-adjust:100%;scroll-padding-top:96px;}
+  a,button,label{-webkit-tap-highlight-color:rgba(21,19,31,.08);}
+  /* ---- MSAM nav ---- */
+  .msam-nav-toggle-input{position:absolute;opacity:0;width:44px;height:44px;top:19px;inset-inline-end:clamp(16px,4vw,40px);margin:0;z-index:45;cursor:pointer;display:none;}
+  .msam-nav-toggle-btn{display:none;}
+  .msam-nav-cta-mobile{display:none !important;}
+  .msam-nav-backdrop{display:none;}
+  @media (max-width:860px){
+    .msam-nav-toggle-input{display:block;}
+    .msam-nav-toggle-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid #e7e5e0;flex-shrink:0;cursor:pointer;}
+    .msam-nav-toggle-btn .msam-burger-bar{display:block;width:18px;height:2px;border-radius:2px;background:#15131f;transition:transform .25s,opacity .25s;}
+    .msam-nav-toggle-input:checked ~ .msam-nav-row .msam-nav-toggle-btn .msam-burger-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .msam-nav-toggle-input:checked ~ .msam-nav-row .msam-nav-toggle-btn .msam-burger-bar:nth-child(2){opacity:0;}
+    .msam-nav-toggle-input:checked ~ .msam-nav-row .msam-nav-toggle-btn .msam-burger-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .msam-nav-toggle-input:focus-visible ~ .msam-nav-row .msam-nav-toggle-btn{outline:2px solid #15131f;outline-offset:2px;}
+    [data-nav-links]{position:fixed !important;top:74px;right:0;left:0;z-index:40;flex-direction:column !important;align-items:stretch !important;gap:2px !important;background:#fff;border-bottom:1px solid #ececE6;padding:10px clamp(16px,4vw,40px) calc(22px + env(safe-area-inset-bottom));box-shadow:0 24px 44px -28px rgba(21,19,31,.3);transform:translateY(-10px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-height:calc(100dvh - 74px);overflow-y:auto;overscroll-behavior:contain;}
+    .msam-nav-toggle-input:checked ~ .msam-nav-row [data-nav-links]{transform:translateY(0);opacity:1;pointer-events:auto;}
+    [data-nav-links] a:not(.msam-nav-cta-mobile){padding:14px 2px !important;border-bottom:1px solid #f2f1ec;font-size:16.5px !important;width:100%;min-height:44px;display:flex;align-items:center;}
+    [data-nav-cta]{display:none !important;}
+    .msam-nav-cta-mobile{display:inline-flex !important;margin-top:14px;width:100%;justify-content:center;padding:14px 22px !important;min-height:48px;}
+    .msam-nav-backdrop{display:block;position:fixed;inset:0;z-index:35;background:rgba(21,19,31,.32);opacity:0;pointer-events:none;transition:opacity .2s;}
+    .msam-nav-toggle-input:checked ~ .msam-nav-backdrop{opacity:1;pointer-events:auto;}
+  }
+  @media (max-width:380px){ .msam-nav-logo-alt{display:none;} }
+</style>
+<nav dir="ltr" style="position:absolute;top:0;left:0;right:0;z-index:30;padding:20px clamp(16px,4vw,40px);">
+  <input type="checkbox" id="msam-nav-toggle" class="msam-nav-toggle-input" aria-label="Toggle navigation menu">
+  <div class="msam-nav-row" style="max-width:88rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="Msam-Home-EN.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+        <img src="assets/msam-logo.png" alt="MSAM Printing and Packaging logo" width="42" height="39" style="display:block;width:42px;height:auto;">
+        <span style="display:flex;align-items:baseline;gap:9px;">
+          <span style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:23px;color:#15131f;letter-spacing:-0.01em;">MSAM</span>
+          <span class="msam-nav-logo-alt" style="font-family:'Tajawal',sans-serif;font-weight:500;font-size:13px;color:#5d5a52;letter-spacing:0.06em;border-left:1.5px solid #d9d6cf;padding-left:10px;">PRINTING &amp; PACKAGING</span>
+        </span>
+      </a>
+      <a href="{{ altHref }}" dir="rtl" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #d9d6cf;background:rgba(255,255,255,.6);color:#26232f;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:13px;padding:6px 13px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s;" style-hover="background:#fff;border-color:#15131f;">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+        العربية
+      </a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:30px;" data-nav-links>
+      <a href="Msam-Home-EN.dc.html" style="position:relative;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:500;font-size:15.5px;color:#26232f;text-decoration:none;padding-bottom:4px;transition:color .2s;" style-hover="color:#000;">Home<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;bottom:-2px;right:0;left:0;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#FF7A1A,#FFC107,#E91E8C,#7B1FA2);"></span></sc-if></a>
+      <a href="Msam-Products-EN.dc.html" style="position:relative;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:500;font-size:15.5px;color:#26232f;text-decoration:none;padding-bottom:4px;transition:color .2s;" style-hover="color:#000;">Products<sc-if value="{{ isProducts }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;bottom:-2px;right:0;left:0;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#FF7A1A,#FFC107,#E91E8C,#7B1FA2);"></span></sc-if></a>
+      <a href="Msam-About-EN.dc.html" style="position:relative;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:500;font-size:15.5px;color:#26232f;text-decoration:none;padding-bottom:4px;transition:color .2s;" style-hover="color:#000;">About<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;bottom:-2px;right:0;left:0;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#FF7A1A,#FFC107,#E91E8C,#7B1FA2);"></span></sc-if></a>
+      <a href="Msam-Contact-EN.dc.html" style="position:relative;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:500;font-size:15.5px;color:#26232f;text-decoration:none;padding-bottom:4px;transition:color .2s;" style-hover="color:#000;">Contact<sc-if value="{{ isContact }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;bottom:-2px;right:0;left:0;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#FF7A1A,#FFC107,#E91E8C,#7B1FA2);"></span></sc-if></a>
+      <a class="msam-nav-cta-mobile" href="https://wa.me/966538297921?text=Hello%20MSAM%2C%20I%20would%20like%20to%20request%20a%20quote" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;background:#15131f;color:#fff;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:14.5px;padding:11px 22px;border-radius:999px;text-decoration:none;transition:background .2s;white-space:nowrap;" style-hover="background:#2b2644;">
+      Request a Quote
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+    </div>
+
+    <a data-nav-cta href="https://wa.me/966538297921?text=Hello%20MSAM%2C%20I%20would%20like%20to%20request%20a%20quote" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;background:#15131f;color:#fff;font-family:'IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:14.5px;padding:11px 22px;border-radius:999px;text-decoration:none;transition:background .2s;white-space:nowrap;" style-hover="background:#2b2644;">
+      Request a Quote
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+        <label class="msam-nav-toggle-btn" for="msam-nav-toggle" aria-hidden="true"><span class="msam-burger-bar"></span><span class="msam-burger-bar"></span><span class="msam-burger-bar"></span></label>
+  </div>
+  <label class="msam-nav-backdrop" for="msam-nav-toggle" aria-hidden="true"></label>
+</nav>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;products&quot;,&quot;about&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const a = this.props.active || 'home';
+    const pages = { home: 'Msam-Home.dc.html', products: 'Msam-Products.dc.html', about: 'Msam-About.dc.html', contact: 'Msam-Contact.dc.html' };
+    return {
+      altHref: pages[a] || pages.home,
+      isHome: a === 'home',
+      isProducts: a === 'products',
+      isAbout: a === 'about',
+      isContact: a === 'contact',
+    };
+  }
+}
+</script>
+</body>
+</html>
