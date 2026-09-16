@@ -144,7 +144,7 @@
         <sc-for list="{{ products }}" as="p">
           <a href="{{ p.href }}" style="display:flex;flex-direction:column;background:#fff;border:1px solid #ececE6;border-radius:22px;padding:14px;text-decoration:none;color:#15131f;transition:box-shadow .25s,transform .25s;" style-hover="box-shadow:0 22px 50px -28px rgba(21,19,31,0.4);transform:translateY(-3px);">
             <div style="height:200px;border-radius:14px;overflow:hidden;margin-bottom:18px;background:#efeee9;">
-              <img data-src="{{ p.img }}" alt="{{ p.photo }}" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img loading="lazy" decoding="async" data-src="{{ p.img }}" alt="{{ p.photo }}" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div style="padding:0 8px 8px;">
               <h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:21px;margin:0 0 10px;letter-spacing:-0.01em;">{{ p.title }}</h3>
@@ -190,13 +190,13 @@ class Component extends DCLogic {
   renderVals() {
     return {
       products: [
-        { title: 'أكواب ورقية', desc: 'أكواب مفردة ومزدوجة الجدار بمقاسات من 4 إلى 16 أونصة مع الأغطية المناسبة.', photo: 'أكواب ورقية مطبوعة بشعار مسام', img: 'assets/products/cups.png', href: 'Msam-Products.dc.html#cups' },
-        { title: 'صناديق وكراتين', desc: 'صناديق بيتزا وبرجر وشحن ومراسلات من كرتون مموّج متين وقابل للطباعة.', photo: 'صناديق كرتون مطبوعة بشعار مسام', img: 'assets/products/pizza-box.png', href: 'Msam-Products.dc.html#boxes' },
-        { title: 'ملصقات وستيكر', desc: 'ملصقات رول وشيت ومقصوصة حسب الشكل بأنواع لامعة وشفافة وذهبية.', photo: 'ملصقات وستيكرات بشعار مسام', img: 'assets/products/roll-labels.png', href: 'Msam-Products.dc.html#stickers' },
-        { title: 'أكياس ورقية', desc: 'أكياس كرافت وأكياس بمقابض للتسوق والتوصيل بأحجام وألوان متعددة.', photo: 'أكياس ورقية بمقابض مطبوعة بشعار مسام', img: 'assets/products/kraft-handle-bag.png', href: 'Msam-Products.dc.html#bags' },
-        { title: 'علب الطعام', desc: 'علب كرافت وكلامشيل وأوراق تغليف وعلب سلطة آمنة وملائمة للطعام.', photo: 'علب تغليف طعام كرافت بشعار مسام', img: 'assets/products/kraft-food-box.png', href: 'Msam-Products.dc.html#food' },
-        { title: 'تغليف مخصّص', desc: 'حلول تغليف مصمّمة بالكامل حسب هوية علامتك التجارية ومتطلباتك.', photo: 'تغليف مخصّص بهوية مسام البصرية', img: 'assets/products/full-identity.png', href: 'Msam-Products.dc.html#custom' },
-        { title: 'الطباعة ثلاثية الأبعاد', desc: 'طلبات مخصّصة بالكامل، أرسل لنا تصميمك أو فكرتك وننفّذها حسب المقاس والخامة.', photo: 'نماذج ومجسمات مطبوعة ثلاثية الأبعاد', img: 'assets/products/3d-print.png', href: 'Msam-Products.dc.html#threed' },
+        { title: 'أكواب ورقية', desc: 'أكواب مفردة ومزدوجة الجدار بمقاسات من 4 إلى 16 أونصة مع الأغطية المناسبة.', photo: 'أكواب ورقية مطبوعة بشعار مسام', img: 'assets/products/cups.webp', href: 'Msam-Products.dc.html#cups' },
+        { title: 'صناديق وكراتين', desc: 'صناديق بيتزا وبرجر وشحن ومراسلات من كرتون مموّج متين وقابل للطباعة.', photo: 'صناديق كرتون مطبوعة بشعار مسام', img: 'assets/products/pizza-box.webp', href: 'Msam-Products.dc.html#boxes' },
+        { title: 'ملصقات وستيكر', desc: 'ملصقات رول وشيت ومقصوصة حسب الشكل بأنواع لامعة وشفافة وذهبية.', photo: 'ملصقات وستيكرات بشعار مسام', img: 'assets/products/roll-labels.webp', href: 'Msam-Products.dc.html#stickers' },
+        { title: 'أكياس ورقية', desc: 'أكياس كرافت وأكياس بمقابض للتسوق والتوصيل بأحجام وألوان متعددة.', photo: 'أكياس ورقية بمقابض مطبوعة بشعار مسام', img: 'assets/products/kraft-handle-bag.webp', href: 'Msam-Products.dc.html#bags' },
+        { title: 'علب الطعام', desc: 'علب كرافت وكلامشيل وأوراق تغليف وعلب سلطة آمنة وملائمة للطعام.', photo: 'علب تغليف طعام كرافت بشعار مسام', img: 'assets/products/kraft-food-box.webp', href: 'Msam-Products.dc.html#food' },
+        { title: 'تغليف مخصّص', desc: 'حلول تغليف مصمّمة بالكامل حسب هوية علامتك التجارية ومتطلباتك.', photo: 'تغليف مخصّص بهوية مسام البصرية', img: 'assets/products/full-identity.webp', href: 'Msam-Products.dc.html#custom' },
+        { title: 'الطباعة ثلاثية الأبعاد', desc: 'طلبات مخصّصة بالكامل، أرسل لنا تصميمك أو فكرتك وننفّذها حسب المقاس والخامة.', photo: 'نماذج ومجسمات مطبوعة ثلاثية الأبعاد', img: 'assets/products/3d-print.webp', href: 'Msam-Products.dc.html#threed' },
       ],
     };
   }

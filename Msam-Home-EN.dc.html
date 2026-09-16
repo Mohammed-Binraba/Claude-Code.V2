@@ -144,7 +144,7 @@
         <sc-for list="{{ products }}" as="p">
           <a href="{{ p.href }}" style="display:flex;flex-direction:column;background:#fff;border:1px solid #ececE6;border-radius:22px;padding:14px;text-decoration:none;color:#15131f;transition:box-shadow .25s,transform .25s;" style-hover="box-shadow:0 22px 50px -28px rgba(21,19,31,0.4);transform:translateY(-3px);">
             <div style="height:200px;border-radius:14px;overflow:hidden;margin-bottom:18px;background:#efeee9;">
-              <img data-src="{{ p.img }}" alt="{{ p.photo }}" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img loading="lazy" decoding="async" data-src="{{ p.img }}" alt="{{ p.photo }}" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div style="padding:0 8px 8px;">
               <h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:21px;margin:0 0 10px;letter-spacing:-0.01em;">{{ p.title }}</h3>
@@ -190,13 +190,13 @@ class Component extends DCLogic {
   renderVals() {
     return {
       products: [
-        { title: 'Paper cups', desc: 'Single and double wall cups from 4 to 16 oz with matching lids.', photo: 'Printed paper cups with the MSAM logo', img: 'assets/products/cups.png', href: 'Msam-Products-EN.dc.html#cups' },
-        { title: 'Boxes and cartons', desc: 'Pizza, burger, shipping and mailer boxes in durable printable corrugated board.', photo: 'Printed cartons with the MSAM logo', img: 'assets/products/pizza-box.png', href: 'Msam-Products-EN.dc.html#boxes' },
-        { title: 'Labels and stickers', desc: 'Roll, sheet and die cut labels in gloss, clear and foil finishes.', photo: 'Labels and stickers with the MSAM logo', img: 'assets/products/roll-labels.png', href: 'Msam-Products-EN.dc.html#stickers' },
-        { title: 'Paper bags', desc: 'Kraft and handled bags for retail and delivery in many sizes and colours.', photo: 'Printed handled paper bags with the MSAM logo', img: 'assets/products/kraft-handle-bag.png', href: 'Msam-Products-EN.dc.html#bags' },
-        { title: 'Food packaging', desc: 'Kraft boxes, clamshells, wraps and salad bowls certified for food contact.', photo: 'Kraft food packaging with the MSAM logo', img: 'assets/products/kraft-food-box.png', href: 'Msam-Products-EN.dc.html#food' },
-        { title: 'Custom packaging', desc: 'Packaging designed end to end around your brand identity and requirements.', photo: 'Custom packaging in the MSAM identity', img: 'assets/products/full-identity.png', href: 'Msam-Products-EN.dc.html#custom' },
-        { title: '3D printing', desc: 'Fully custom orders. Send us your design or idea and we produce it in the size and material you need.', photo: '3D printed models and prototypes', img: 'assets/products/3d-print.png', href: 'Msam-Products-EN.dc.html#threed' },
+        { title: 'Paper cups', desc: 'Single and double wall cups from 4 to 16 oz with matching lids.', photo: 'Printed paper cups with the MSAM logo', img: 'assets/products/cups.webp', href: 'Msam-Products-EN.dc.html#cups' },
+        { title: 'Boxes and cartons', desc: 'Pizza, burger, shipping and mailer boxes in durable printable corrugated board.', photo: 'Printed cartons with the MSAM logo', img: 'assets/products/pizza-box.webp', href: 'Msam-Products-EN.dc.html#boxes' },
+        { title: 'Labels and stickers', desc: 'Roll, sheet and die cut labels in gloss, clear and foil finishes.', photo: 'Labels and stickers with the MSAM logo', img: 'assets/products/roll-labels.webp', href: 'Msam-Products-EN.dc.html#stickers' },
+        { title: 'Paper bags', desc: 'Kraft and handled bags for retail and delivery in many sizes and colours.', photo: 'Printed handled paper bags with the MSAM logo', img: 'assets/products/kraft-handle-bag.webp', href: 'Msam-Products-EN.dc.html#bags' },
+        { title: 'Food packaging', desc: 'Kraft boxes, clamshells, wraps and salad bowls certified for food contact.', photo: 'Kraft food packaging with the MSAM logo', img: 'assets/products/kraft-food-box.webp', href: 'Msam-Products-EN.dc.html#food' },
+        { title: 'Custom packaging', desc: 'Packaging designed end to end around your brand identity and requirements.', photo: 'Custom packaging in the MSAM identity', img: 'assets/products/full-identity.webp', href: 'Msam-Products-EN.dc.html#custom' },
+        { title: '3D printing', desc: 'Fully custom orders. Send us your design or idea and we produce it in the size and material you need.', photo: '3D printed models and prototypes', img: 'assets/products/3d-print.webp', href: 'Msam-Products-EN.dc.html#threed' },
       ],
     };
   }

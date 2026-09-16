@@ -77,7 +77,7 @@
             <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="5">
               <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #ececE6;border-radius:18px;padding:12px;transition:box-shadow .25s,transform .25s;" style-hover="box-shadow:0 20px 44px -26px rgba(21,19,31,0.4);transform:translateY(-3px);">
                 <div style="height:158px;border-radius:13px;overflow:hidden;margin-bottom:14px;background:#efeee9;">
-                  <img data-src="{{ it.img }}" alt="{{ it.name }}" style="width:100%;height:100%;object-fit:cover;display:block;">
+                  <img loading="lazy" decoding="async" data-src="{{ it.img }}" alt="{{ it.name }}" style="width:100%;height:100%;object-fit:cover;display:block;">
                 </div>
                 <div style="padding:0 6px 6px;">
                   <h3 style="font-family:'Tajawal',sans-serif;font-weight:700;font-size:17px;margin:0 0 7px;letter-spacing:-0.01em;">{{ it.name }}</h3>
@@ -122,60 +122,60 @@ class Component extends DCLogic {
   renderVals() {
     const categories = [
       {
-        id: 'cups', num: '01', title: 'Paper Cups', anchor: '#cups', banner: 'assets/products/cups.png',
+        id: 'cups', num: '01', title: 'Paper Cups', anchor: '#cups', banner: 'assets/products/cups.webp',
         items: [
-          { name: 'Single and double wall cups', spec: '4 / 6.5 / 8 / 9 / 12 / 16 oz for hot drinks, with heat insulation available', img: 'assets/products/hot-cups.png', photo: 'Single and double wall paper cups' },
-          { name: 'Cold drink cups', spec: '12 / 16 / 22 oz, paper or clear', img: 'assets/products/cold-cups.png', photo: 'Cold drink cups' },
-          { name: 'Lids of every type', spec: 'Flat and domed lids plus insulating sleeves', img: 'assets/products/lids.png', photo: 'Cup lids and insulating sleeves' },
+          { name: 'Single and double wall cups', spec: '4 / 6.5 / 8 / 9 / 12 / 16 oz for hot drinks, with heat insulation available', img: 'assets/products/hot-cups.webp', photo: 'Single and double wall paper cups' },
+          { name: 'Cold drink cups', spec: '12 / 16 / 22 oz, paper or clear', img: 'assets/products/cold-cups.webp', photo: 'Cold drink cups' },
+          { name: 'Lids of every type', spec: 'Flat and domed lids plus insulating sleeves', img: 'assets/products/lids.webp', photo: 'Cup lids and insulating sleeves' },
         ],
       },
       {
-        id: 'boxes', num: '02', title: 'Boxes and Cartons', anchor: '#boxes', banner: 'assets/products/pizza-box.png',
+        id: 'boxes', num: '02', title: 'Boxes and Cartons', anchor: '#boxes', banner: 'assets/products/pizza-box.webp',
         items: [
-          { name: 'Pizza boxes', spec: '6" / 9" / 12" / 14", reinforced corrugated board', img: 'assets/products/pizza-box.png', photo: 'Printed pizza boxes' },
-          { name: 'Burger and meal boxes', spec: 'Secure closing burger and side boxes, fully printed', img: 'assets/products/burger-box.png', photo: 'Burger and meal boxes' },
-          { name: 'Shipping and delivery boxes', spec: '3 and 5 ply corrugated board in many sizes', img: 'assets/products/shipping-box.png', photo: 'Corrugated shipping boxes' },
-          { name: 'Cake and dessert boxes', spec: 'Window boxes in a range of sizes', img: 'assets/products/cake-box.png', photo: 'Cake and dessert boxes' },
+          { name: 'Pizza boxes', spec: '6" / 9" / 12" / 14", reinforced corrugated board', img: 'assets/products/pizza-box.webp', photo: 'Printed pizza boxes' },
+          { name: 'Burger and meal boxes', spec: 'Secure closing burger and side boxes, fully printed', img: 'assets/products/burger-box.webp', photo: 'Burger and meal boxes' },
+          { name: 'Shipping and delivery boxes', spec: '3 and 5 ply corrugated board in many sizes', img: 'assets/products/shipping-box.webp', photo: 'Corrugated shipping boxes' },
+          { name: 'Cake and dessert boxes', spec: 'Window boxes in a range of sizes', img: 'assets/products/cake-box.webp', photo: 'Cake and dessert boxes' },
         ],
       },
       {
-        id: 'stickers', num: '03', title: 'Labels and Stickers', anchor: '#stickers', banner: 'assets/products/stickers.png',
+        id: 'stickers', num: '03', title: 'Labels and Stickers', anchor: '#stickers', banner: 'assets/products/stickers.webp',
         items: [
-          { name: 'Roll labels', spec: 'For fast packing lines, round or square', img: 'assets/products/roll-labels.png', photo: 'Roll labels' },
-          { name: 'Sheet labels', spec: 'Multi up sheets that peel apart easily', img: 'assets/products/sheet-labels.png', photo: 'Sheet labels' },
-          { name: 'Transparent labels', spec: 'A sleek glass like finish on your packaging', img: 'assets/products/transparent-labels.png', photo: 'Transparent labels' },
+          { name: 'Roll labels', spec: 'For fast packing lines, round or square', img: 'assets/products/roll-labels.webp', photo: 'Roll labels' },
+          { name: 'Sheet labels', spec: 'Multi up sheets that peel apart easily', img: 'assets/products/sheet-labels.webp', photo: 'Sheet labels' },
+          { name: 'Transparent labels', spec: 'A sleek glass like finish on your packaging', img: 'assets/products/transparent-labels.webp', photo: 'Transparent labels' },
         ],
       },
       {
-        id: 'bags', num: '04', title: 'Paper Bags', anchor: '#bags', banner: 'assets/products/kraft-handle-bag.png',
+        id: 'bags', num: '04', title: 'Paper Bags', anchor: '#bags', banner: 'assets/products/kraft-handle-bag.webp',
         items: [
-          { name: 'Kraft bags with handles', spec: 'Small, medium and large with twisted or flat handles', img: 'assets/products/kraft-handle-bag.png', photo: 'Kraft bags with handles' },
-          { name: 'Cloth bags', spec: 'Reusable cloth bags with sturdy handles and full colour printing', img: 'assets/products/cloth-bag.png', photo: 'Printed cloth bags' },
-          { name: 'Matte and gloss luxury bags', spec: 'A premium finish for retail and gifting', img: 'assets/products/luxury-bag.png', photo: 'Luxury shopping bags' },
-          { name: 'Flat paper bags', spec: 'For bakery items and light products', img: 'assets/products/flat-bag.png', photo: 'Flat paper bags' },
+          { name: 'Kraft bags with handles', spec: 'Small, medium and large with twisted or flat handles', img: 'assets/products/kraft-handle-bag.webp', photo: 'Kraft bags with handles' },
+          { name: 'Cloth bags', spec: 'Reusable cloth bags with sturdy handles and full colour printing', img: 'assets/products/cloth-bag.webp', photo: 'Printed cloth bags' },
+          { name: 'Matte and gloss luxury bags', spec: 'A premium finish for retail and gifting', img: 'assets/products/luxury-bag.webp', photo: 'Luxury shopping bags' },
+          { name: 'Flat paper bags', spec: 'For bakery items and light products', img: 'assets/products/flat-bag.webp', photo: 'Flat paper bags' },
         ],
       },
       {
-        id: 'food', num: '05', title: 'Food Packaging', anchor: '#food', banner: 'assets/products/food-deli.png',
+        id: 'food', num: '05', title: 'Food Packaging', anchor: '#food', banner: 'assets/products/food-deli.webp',
         items: [
-          { name: 'Kraft food boxes', spec: 'Kraft boxes in several sizes for meals and salads', img: 'assets/products/kraft-food-box.png', photo: 'Kraft food boxes' },
-          { name: 'Clamshell boxes', spec: 'Hinged lid boxes for ready meals', img: 'assets/products/clamshell.png', photo: 'Clamshell boxes' },
-          { name: 'Salad and soup bowls', spec: 'Paper bowls with tight lids in several sizes', img: 'assets/products/salad-bowl.png', photo: 'Salad and soup bowls' },
-          { name: 'Paper plates', spec: 'Sturdy paper plates in a range of sizes', img: 'assets/products/paper-plate.png', photo: 'Paper plates' },
+          { name: 'Kraft food boxes', spec: 'Kraft boxes in several sizes for meals and salads', img: 'assets/products/kraft-food-box.webp', photo: 'Kraft food boxes' },
+          { name: 'Clamshell boxes', spec: 'Hinged lid boxes for ready meals', img: 'assets/products/clamshell.webp', photo: 'Clamshell boxes' },
+          { name: 'Salad and soup bowls', spec: 'Paper bowls with tight lids in several sizes', img: 'assets/products/salad-bowl.webp', photo: 'Salad and soup bowls' },
+          { name: 'Paper plates', spec: 'Sturdy paper plates in a range of sizes', img: 'assets/products/paper-plate.webp', photo: 'Paper plates' },
         ],
       },
       {
-        id: 'custom', num: '06', title: 'Custom Packaging', anchor: '#custom', banner: 'assets/products/custom.png',
+        id: 'custom', num: '06', title: 'Custom Packaging', anchor: '#custom', banner: 'assets/products/custom.webp',
         items: [
-          { name: 'Full identity packaging', spec: 'A consistent packaging system in your colours and logo', img: 'assets/products/full-identity.png', photo: 'Full brand identity packaging' },
-          { name: 'Tapes and wrapping paper', spec: 'Adhesive tape and wrap printed with your logo', img: 'assets/products/wrapping-paper.png', photo: 'Printed tape and wrapping paper' },
-          { name: 'Business cards', spec: 'Printed on premium stock with a matte or gloss finish', img: 'assets/products/business-cards.png', photo: 'Printed business cards' },
+          { name: 'Full identity packaging', spec: 'A consistent packaging system in your colours and logo', img: 'assets/products/full-identity.webp', photo: 'Full brand identity packaging' },
+          { name: 'Tapes and wrapping paper', spec: 'Adhesive tape and wrap printed with your logo', img: 'assets/products/wrapping-paper.webp', photo: 'Printed tape and wrapping paper' },
+          { name: 'Business cards', spec: 'Printed on premium stock with a matte or gloss finish', img: 'assets/products/business-cards.webp', photo: 'Printed business cards' },
         ],
       },
       {
-        id: 'threed', num: '07', title: '3D Printing', anchor: '#threed', banner: 'assets/products/3d-print.png',
+        id: 'threed', num: '07', title: '3D Printing', anchor: '#threed', banner: 'assets/products/3d-print.webp',
         items: [
-          { name: 'Custom order from your design', spec: 'Send us your design file or idea and we produce it in the size and material you need', img: 'assets/products/3d-print.png', photo: 'Custom 3D printing order' },
+          { name: 'Custom order from your design', spec: 'Send us your design file or idea and we produce it in the size and material you need', img: 'assets/products/3d-print.webp', photo: 'Custom 3D printing order' },
         ],
       },
     ];
